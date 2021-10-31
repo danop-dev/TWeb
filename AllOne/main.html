@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descopera lumea</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="main.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#discover" class="nav__link">Descopera lumea</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#gallery" class="nav__link">Gallery</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#discovery" class="nav__link">Discovery</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#social-media" class="nav__link">Social Media</a>
+                    </li>
+                </ul>
+            </div>
+            <button class="burger">
+                <span class="burger__line">1</span><span class="burger__line">2</span><span class="burger__line">3</span>
+            </button>
+        </nav>
+        
+    </header>
+    <section id="discover" class="section">
+        <div class="container">
+            <div class="section__head">
+                <h2 class="section__title">Descopera lumea</h2>
+                <div class="section__subtitle">
+                    <p>Cele mai faimoase tari</p>
+                </div>
+            </div>
+            <div class="section__wrapper">
+                <ul id="id" class="section__story-list">
+                    <li class="section__item">
+                        <a href="story.html" class="section__link">
+                            <img src="img/story/1.jpg" alt="Country BG">
+                        </a>
+                        <div class="section__story-info">
+                            <div class="section__story-head">
+                                <div class="story-title">Romania</div>
+                                <div class="story-auth">13.09.2021</div>
+                            </div>
+                            <p class="story-text">România este un stat situat în sud-estul Europei Centrale, pe cursul inferior al Dunării, la nord de peninsula Balcanică și la țărmul nord-vestic al Mării Negre. Pe teritoriul ei este situată aproape toată suprafața Deltei Dunării și partea sudică și centrală a Munților Carpați</p>
+                            <a href="story.html" class="story-btn">Citeste</a>
+                        </div>
+                    </li>
+                    <li class="section__item">
+                        <a href="story2.html" class="section__link">
+                            <img src="img/story/3.jpg" alt="Country BG">
+                        </a>
+                        <div class="section__story-info">
+                            <div class="section__story-head">
+                                <div class="story-title">Ungaria</div>
+                                <div class="story-auth">13.09.2021</div>
+                            </div>
+                            <p class="story-text">Ungaria este un stat situat în Centrul Europei, în Câmpia Panonică și la poalele sudice ale Carpaților Occidentali Interiori, la o distanță egală de Oceanul Atlantic și Munții Ural, respectiv de Marea Mediterană și Marea Nordului.</p>
+                            <a href="story2.html" class="story-btn">Citeste</a>
+                        </div>
+                    </li>
+                    <li class="section__item">
+                        <a href="story3.html" class="section__link">
+                            <img src="img/story/5.jpg" alt="Country BG">
+                        </a>
+                        <div class="section__story-info">
+                            <div class="section__story-head">
+                                <div class="story-title">China</div>
+                                <div class="story-auth">13.09.2021</div>
+                            </div>
+                            <p class="story-text">China, denumită oficial Republica Populară Chineză, este un stat independent situat în Asia de Est. Este țara cea mai populată din lume, cu o populație de peste 1.350.000.000 de locuitori. China are un sistem unipartid, condus de către Partidul Comunist Chinez</p>
+                            <a href="story3.html" class="story-btn">Citeste</a>
+                        </div>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div> 
+    </section>
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="section__head">
+                <h2 class="section__title">Gallery</h2>
+                <div class="section__subtitle">
+                    <p>Peisaje si poze din toate colturile lumii</p>
+                </div>
+            </div>
+            <div class="carousel-box">
+                <div class="carousel-wrapper">
+                    <div class="carousel__item carousel__item--active">
+                        <img src="img/carousel/1.jpg" alt="Wallpaper">
+                    </div>
+                    <div class="carousel__item">
+                        <img src="img/carousel/2.jpg" alt="Wallpaper">
+                    </div>
+                    <div class="carousel__item">
+                        <img src="img/carousel/3.jpg" alt="Wallpaper">
+                    </div>
+                    <div class="carousel__item">
+                        <img src="img/carousel/5.jpg" alt="Wallpaper">
+                    </div>
+                    <div class="carousel__item">
+                        <img src="img/carousel/6.jpg" alt="Wallpaper">
+                    </div>
+
+                    <button id="prev-btn" class="carousel-btn"></button>
+                    <button id="next-btn" class="carousel-btn"></button>
+                </div>
+                <div class="carousel-dots">
+                    <button class="dot dot--active">1</button>
+                    <button class="dot">2</button>
+                    <button class="dot">3</button>
+                    <button class="dot">4</button>
+                    <button class="dot">5</button>
+                </div>
+            </div> <!-- carousel-box close -->
+        </div> <!-- container close -->
+
+        <div class="scroll-top scroll-top--active">
+            <svg class="scroll-top__svg" viewBox="-2 -2 60 59">
+                <path
+                    class="scroll-top__svg-path"
+                    d="
+                        M 0, 25
+                        a 25,25 0 1,1 50,0
+                        a 25,25 0 1,1 -50,0
+                    "
+                />
+            </svg>
+        </div>
+    </section>
+
+    <section id="discovery" class="section">
+        <div class="container">
+            <div class="section__head">
+                <h2 class="section__title">Discovery</h2>
+                <div class="section__subtitle">
+                    <p>Descopera toate colturile lumii</p>
+                </div>
+            </div>
+            
+            <div class="accordion">
+                <div class="accordion-item accordion-item--active">
+                    <div class="accordion-item__trigger">
+                        Romania
+                    </div>
+                    <div class="accordion-item__content">
+                        The Valea Cetăţii Cave and surrounding natural protected area are all exceptional beautiful – however, the standout highlight has to be the jaw-dropping Cathedral Hall reached through a short walk through an ancient forest. Within this 30,000 cubic meter cave are small pools of water that perfectly mirror the extraordinary calcite formations and white arches that hang from above.
+                        A rare chance to get up close to this natural geological formations – and without undertaking a claustrophobic expedition of abseiling as in many other places. It is conveniently located only a few kilometers from the city of Râşnov, though for some reason international tourists have yet to discover the Valea Cetăţii Cave – meaning a more enriching experience for those who wind up at this magical place!
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item__trigger">
+                        Ungaria
+                    </div>
+                    <div class="accordion-item__content">
+                        When you first set eyes on spectacular Buda Castle (Budavári Palota) in the Hungarian capital of Budapest, you'll appreciate why so many people consider the city the "Paris of the East." This spectacular historic landmark - now a UNESCO World Heritage Site - ranks right up there with Versailles in France in terms of its majestic proportions and wonderful design.
+                        Built on the site of a palace destroyed during the Ottoman Empire's Siege of 1686, this newer structure was rebuilt in the 18th century for the Habsburg monarchy and includes more than 200 rooms. Its symmetrical layout focuses on the lovely 61-meter-high central dome facing the Danube, where you can get stunning views of the castle and the other buildings on Castle Hill.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item__trigger">
+                        China
+                    </div>
+                    <div class="accordion-item__content">
+                        Kunming, the capital of Yunnan Province, is the economic, transportation and cultural center of southwest China. It is linked by rail from all of China’s major cities as well as with Vietnam; the rail link with Hanoi was established in 1901. Caravans to Southeast Asia, Tibet and India have passed through Kunming since the third century BC.
+                        Kunming’s mild climate makes it a good place to visit any time of the year. It has cool, dry winters though summers can be hot and humid. Growing conditions are great for flowers, with more than 400 varieties grown here. The camellia is the city’s official flower. The city also is known for its lush green parks, such as Cuihu (Green Lake) Park with its waterways and winding paths. Younger travelers may enjoy a visit to Daguan Park because of its funfair and food stalls.
+                    </div>
+                </div>
+            </div> <!-- accordion close -->
+        
+        </div> <!-- container close -->
+    </section>
+
+    <footer id="social-media" class="footer">
+        <ul class="social-list">
+            <li class="social-item">
+                <a href="https://www.facebook.com/" class="social-link fb--color" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li class="social-item">
+                <a href="https://www.instagram.com" class="social-link insta--color" target="_blank"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li class="social-item">
+                <a href="https://www.twitter.com" class="social-link tw--color" target="_blank"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="social-item">
+                <a href="https://telegram.org" class="social-link teleg--color" target="_blank"><i class="fab fa-telegram"></i></a>
+            </li>
+        </ul>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
