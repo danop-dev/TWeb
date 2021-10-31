@@ -586,3 +586,92 @@ table, th, td {
 .accordion-item--active .accordion-item__content {
     display: block;
 }
+
+/* contact forms */
+#contact{
+    margin-top: 100px;
+}
+.contact__box {
+    width: 80%;
+    margin: 50px auto;
+    box-shadow: rgb(190 190 190) 0px 10px 20px, rgb(190 190 190) 0px 6px 6px;
+    padding: 50px;
+    border-radius: 10px;
+    
+
+}
+#contact-form{
+    margin-top: 50px;
+    font-family: "Open Sans";
+}
+.contact__form-line {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.contact__input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.contact__form-line .contact__input{
+    width: 48%;
+}
+.contact__input input{
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    
+    font-family: inherit;
+    font-size: 0.85rem;
+}
+.contact__input input:focus, #message:focus{
+    outline-color: rgba(19, 107, 217, 1);
+}
+
+.contact__input label{
+    font-family: inherit;
+    font-weight: 400;
+    font-weight: bold;
+    color:rgba(19, 107, 217, 1);
+    margin-bottom: 5px;
+}
+
+#message{
+    height: 100px;
+    padding: 10px 15px;
+    resize: none;
+    width: 100%;
+
+    font-family: inherit;
+    font-size: 0.85rem;
+    
+}
+#message::placeholder{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    
+    font-family: inherit;
+}
+
+#submit{
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    padding: 10px 0;
+    background-color: rgba(19, 107, 217, 1);
+    border-radius: 5px;
+    border: transparent;
+    
+    font-family: 'Cubano';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+#submit:hover{
+    background-color: rgba(13, 33, 184, 1); 
+}
