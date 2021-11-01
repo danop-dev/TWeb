@@ -208,21 +208,21 @@
                 </div>
 
                 <form action="#" id="contact-form">
-                    <div class="contact__form-line">
-                        <div class="contact__input">
+                    <div class="form-line">
+                        <div class="form__input">
                             <label for="fname">First name</label>
                             <input type="text" id="fname" name="fname" placeholder="Firs Name">
                         </div>
-                        <div class="contact__input">
+                        <div class="form__input">
                             <label for="lname">Last name</label>
                             <input type="text" id="lname" name="lname" placeholder="Last Name">
                         </div>
                     </div>
-                    <div class="contact__input">
+                    <div class="form__input">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="example@email.com">
                     </div>
-                    <div class="contact__input">
+                    <div class="form__input">
                         <label for="message">Message</label>
                         <!-- <input type="text" id="message" name="message" placeholder="Type your message here"> -->
                         <textarea name="message" id="message" placeholder="Type your message here"></textarea>
@@ -245,8 +245,8 @@
                     
                     <div class="signin-line">
                         <div class="auto-sign">
-                            <input type="checkbox" id="scales" name="auto" checked>
-                            <label for="auto">Keep me signed in</label>
+                            <input type="checkbox" id="auto-sign__input" name="auto-sign-in" checked>
+                            <label for="auto-sign-in">Keep me signed in</label>
                         </div>
                         <a href="#" id="password-forgot">Reset the password</a>
                     </div>
@@ -271,21 +271,43 @@
     </section>
 
 
-    <!-- <section class="section signin-section" id="register">
+
+    <!-- register -->
+    <section class="section signin-section register--none" id="register">
         <div class="container">
             <div class="signin__box signin__box--abs">
-                <button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button>
-                <form action="#" id="signin-form">
-                    <h3 class="sign-title">Login Account</h3>
-                    <input class="input-data" type="email" id="sign-email" name="email" placeholder="example@email.com">
-                    <input class="input-data" type="password" id="sign-password" name="password" placeholder="Password">
-                    
+                <button class="close-btn" id="close-btn--reg"><i class="fas fa-times"></i></button>
+                <form action="#" id="register-form">
+                    <h3 class="sign-title">Register Account</h3>
+
+                    <div class="form-line">
+                        <div class="form__input">
+                            <label for="reg-fname">First name</label>
+                            <input class="--border" type="text" id="reg-fname" name="reg-fname" placeholder="Firs Name">
+                        </div>
+                        <div class="form__input">
+                            <label for="reg-lname">Last name</label>
+                            <input class="--border" type="text" id="reg-lname" name="reg-lname" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form__input">
+                        <label for="reg-username">Username</label>
+                        <input class="--border" type="text" id="reg-username" name="reg-username" placeholder="@username">
+                    </div>
+                    <div class="form__input">
+                        <label for="reg-email">Email</label>
+                        <input class="--border" type="email" id="reg-email" name="reg-email" placeholder="example@email.com">
+                    </div>
                     <div class="signin-line">
                         <div class="auto-sign">
-                            <input type="checkbox" id="scales" name="auto" checked>
-                            <label for="auto">Keep me signed in</label>
+                            <input type="checkbox" id="auto-sign__input" name="auto-reg" checked>
+                            <label for="auto-reg">Keep me signed in</label>
                         </div>
-                        <a href="#" id="password-forgot">Reset the password</a>
+                        <div class="auto-sign">
+                            <input type="checkbox" id="auto-sign__input" name="auto-reg" checked>
+                            <a href="#" id="password-forgot">I agree with the policy</a>
+                        </div>
+                        
                     </div>
         
                     <span class="or-line">or</span>
@@ -300,12 +322,15 @@
                             <a href="#" class="social-link teleg--color form--social-link" target="_blank"><i class="fab fa-telegram"></i></a>
                         </li>
                     </ul>
-                    <input type="submit" value="Subscribe" id="subscribe">
+                    <input type="submit" value="Register" id="register-input">
                     
                 </form>
             </div>
         </div>
-    </section> -->
+    </section>
+
+
+
 
 
     <footer id="social-media" class="footer">

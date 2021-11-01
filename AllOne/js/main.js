@@ -158,17 +158,27 @@ window.onload = function () {
 
 
 
-    //login click
+    //login click ## register click
     const btnSignin = document.getElementById('login-btn');
     const btnCloseSignin = document.getElementById('close-btn');
     const signinWindow = document.getElementById('signin');
 
+    const btnReg = document.getElementById('register-btn');
+    const btnCloseReg = document.getElementById('close-btn--reg');
+    const signinWindowReg = document.getElementById('register');
+
     btnSignin.addEventListener('click', () => {
         signinWindow.classList.remove('signin--none');
     });
-    console.log(btnCloseSignin);
     btnCloseSignin.addEventListener('click', () => {
         signinWindow.classList.add('signin--none');
     });
+   
 
+    btnReg.addEventListener('click', () => {
+        signinWindowReg.classList.remove('register--none');
+    });
+    btnCloseReg.addEventListener('click', () => {
+        signinWindowReg.classList.add('register--none');
+    });
 }
