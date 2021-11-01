@@ -132,8 +132,6 @@ window.onload = function () {
     const accordionItem = document.getElementsByClassName('accordion-item');
     const elements = document.getElementsByClassName('accordion-item__trigger');
 
-    console.log(elements)
-
     for (let item = 0; item < elements.length; item++){
         
         elements[item].addEventListener('click', () => {
@@ -157,4 +155,20 @@ window.onload = function () {
             });
         });
     });
+
+
+
+    //login click
+    const btnSignin = document.getElementById('login-btn');
+    const btnCloseSignin = document.getElementById('close-btn');
+    const signinWindow = document.getElementById('signin');
+
+    btnSignin.addEventListener('click', () => {
+        signinWindow.classList.remove('signin--none');
+    });
+    console.log(btnCloseSignin);
+    btnCloseSignin.addEventListener('click', () => {
+        signinWindow.classList.add('signin--none');
+    });
+
 }
