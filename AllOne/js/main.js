@@ -109,7 +109,6 @@ window.onload = function () {
     
     //Accordion
 
-
     // const elements = document.querySelectorAll('.accordion-item__trigger');
     // elements.forEach((item) => 
     //     item.addEventListener('click', () => {
@@ -126,9 +125,6 @@ window.onload = function () {
     //     })
     // )
 
-
-
-
     const accordionItem = document.getElementsByClassName('accordion-item');
     const elements = document.getElementsByClassName('accordion-item__trigger');
 
@@ -144,7 +140,6 @@ window.onload = function () {
         })
     }
 
-
     //smooth scroll link page
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -155,8 +150,6 @@ window.onload = function () {
             });
         });
     });
-
-
 
     //login click ## register click
     const btnSignin = document.getElementById('login-btn');
@@ -173,7 +166,6 @@ window.onload = function () {
     btnCloseSignin.addEventListener('click', () => {
         signinWindow.classList.add('signin--none');
     });
-   
 
     btnReg.addEventListener('click', () => {
         signinWindowReg.classList.remove('register--none');

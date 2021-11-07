@@ -93,7 +93,7 @@ table, th, td {
 }
 
 .nav__link {
-    font-family: 'Cubano';
+    font-family: 'Cubano', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1.15rem;
@@ -149,7 +149,7 @@ table, th, td {
     align-items: center;
 }
 .section__title {
-    font-family: 'Cubano';
+    font-family: 'Cubano', sans-serif;
     font-weight: 400;
     font-style: normal;
     text-transform: uppercase;
@@ -202,14 +202,14 @@ table, th, td {
     padding: 20px 15px 15px 15px;
 }
 .story-title {
-    font-family: 'Cubano';
+    font-family: 'Cubano', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1rem;
     letter-spacing: 2px;
 }
 .story-auth {
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-weight: 400;
     font-size: 0.85rem;
@@ -220,7 +220,7 @@ table, th, td {
 .story-text {
     margin-top: 15px;
     margin-bottom: 15px;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-weight: 400;
     font-size: 0.95rem;
@@ -234,7 +234,7 @@ table, th, td {
     background-color: rgba(19, 107, 217, 1);
     border-radius: 5px;
     color: #fff;
-    font-family: 'Cubano';
+    font-family: 'Cubano', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1.15rem;
@@ -313,11 +313,11 @@ table, th, td {
     margin-bottom: 20px;
 }
 .section-story__title {
-    font-family: 'Cubano';
+    font-family: 'Cubano', sans-serif;
     font-size: 1.5rem;
 }
 .section-story__subtitle {
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-size: 0.95rem;
     margin-top: 10px;
@@ -335,7 +335,7 @@ table, th, td {
     height: 400px;
 }
 .story-auth-name {
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-size: 0.95rem;
     margin-top: 10px;
@@ -353,7 +353,7 @@ table, th, td {
     margin-bottom: 15px;
 }
 .story-text-box{
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-size: 1rem;
 }
@@ -374,7 +374,7 @@ table, th, td {
 }
 .extras{
     text-align: end;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-size: 1.12rem;
     margin-top: 10px;
@@ -568,7 +568,7 @@ table, th, td {
 }
 .accordion-item__content {
     padding: 10px;
-    font-family: "Open Sans";
+    font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-weight: 400;
     font-size: 0.95rem;
@@ -602,7 +602,7 @@ table, th, td {
 }
 #contact-form{
     margin-top: 50px;
-    font-family: "Open Sans";
+    font-family: 'Open Sans', sans-serif;
 }
 .form-line {
     width: 100%;
@@ -664,7 +664,7 @@ table, th, td {
     border-radius: 5px;
     border: transparent;
     
-    font-family: 'Cubano';
+    font-family: 'Cubano', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1rem;
@@ -704,9 +704,7 @@ table, th, td {
     background-color:rgb(255, 255, 255);
     border-radius: 10px;
 
-    font-family: "Open Sans";
-    
-    
+    font-family: 'Open Sans', sans-serif; 
 }
 .close-btn {
     position: absolute;
@@ -759,12 +757,18 @@ table, th, td {
     display: flex;
     
 }
-.auto-sign input{
-    
-}
 .auto-sign label{
+    margin-left: 3px;
     
 }
+#agree-statements{
+    color: rgb(19, 107, 217);
+}
+
+#agree-statements:hover{
+    color: rgb(0, 74, 165);
+}
+
 #password-forgot{
     color: rgba(19, 107, 217, 1);
 }
@@ -773,7 +777,7 @@ table, th, td {
 }
 .or-line {
     font-size: 25px;
-    font-family: 'Cubano';
+    font-family: 'Cubano', sans-serif;
     font-style: italic;
     display: flex;
     justify-content: center;
@@ -814,7 +818,7 @@ table, th, td {
     border-radius: 5px;
     border: transparent;
     
-    font-family: 'Cubano';
+    font-family: 'Cubano', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1rem;
@@ -839,7 +843,7 @@ table, th, td {
     border-radius: 5px;
     border: transparent;
     
-    font-family: 'Cubano';
+    font-family: 'Cubano', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1rem;
@@ -852,4 +856,14 @@ table, th, td {
 }
 .register--none{
     display: none;  
+}
+
+/* ### CONTACT FORM VALIDATE STYLE ### */
+label.error{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: 700;
+    color: rgb(255, 0, 0);
+    margin-top: 5px;
 }

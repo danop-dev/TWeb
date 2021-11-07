@@ -33,10 +33,10 @@
                         <a href="#contact" class="nav__link">Contact</a>
                     </li>
                     <li class="nav__item">
-                        <button href="#" class="nav__link" id="login-btn">Login</button>
+                        <button class="nav__link" id="login-btn">Login</button>
                     </li>
                     <li class="nav__item">
-                        <button href="#" class="nav__link" id="register-btn">Register</button>
+                        <button class="nav__link" id="register-btn">Register</button>
                     </li>
                     
                 </ul>
@@ -45,8 +45,8 @@
                 <span class="burger__line">1</span><span class="burger__line">2</span><span class="burger__line">3</span>
             </button>
         </nav>
-        
     </header>
+
     <section id="discover" class="section">
         <div class="container">
             <div class="section__head">
@@ -98,9 +98,10 @@
                     </li>
                    
                 </ul>
-            </div>
-        </div> 
+            </div> <!-- section__wrapper close -->
+        </div> <!-- container close -->
     </section>
+
     <section id="gallery" class="section">
         <div class="container">
             <div class="section__head">
@@ -139,7 +140,6 @@
                 </div>
             </div> <!-- carousel-box close -->
         </div> <!-- container close -->
-
         <div class="scroll-top scroll-top--active">
             <svg class="scroll-top__svg" viewBox="-2 -2 60 59">
                 <path
@@ -192,13 +192,12 @@
                     </div>
                 </div>
             </div> <!-- accordion close -->
-        
         </div> <!-- container close -->
     </section>
     
+    <!-- ### SECTION CONTACT FORM ### -->
     <section id="contact" class="section">
-        <div class="container">
-            
+        <div class="container">     
             <div class="contact__box">
                 <div class="section__head">
                     <h2 class="section__title">Contact</h2>
@@ -207,7 +206,7 @@
                     </div>
                 </div>
 
-                <form action="#" id="contact-form">
+                <form action="#" id="contact-form" name="ContactForm">
                     <div class="form-line">
                         <div class="form__input">
                             <label for="fname">First name</label>
@@ -230,10 +229,11 @@
                     <input type="submit" value="Send Message" id="submit">
 
                 </form>
-            </div>
-        </div>
+            </div> <!-- contact__box close -->
+        </div> <!-- container close -->
     </section>
 
+    <!-- ### SECTION SIGNIN FORM ### -->
     <section class="section signin-section signin--none" id="signin">
         <div class="container">
             <div class="signin__box signin__box--abs">
@@ -245,12 +245,11 @@
                     
                     <div class="signin-line">
                         <div class="auto-sign">
-                            <input type="checkbox" id="auto-sign__input" name="auto-sign-in" checked>
-                            <label for="auto-sign-in">Keep me signed in</label>
+                            <input type="checkbox" id="autoSignIn" class="auto-sign__input" name="autoSignIn" checked>
+                            <label for="autoSignIn">Keep me signed in</label>
                         </div>
                         <a href="#" id="password-forgot">Reset the password</a>
-                    </div>
-        
+                    </div>       
                     <span class="or-line">or</span>
                     <ul class="form__social-list">
                         <li class="form__social-item">
@@ -263,16 +262,13 @@
                             <a href="#" class="social-link teleg--color form--social-link" target="_blank"><i class="fab fa-telegram"></i></a>
                         </li>
                     </ul>
-                    <input type="submit" value="Subscribe" id="subscribe">
-                    
+                    <input type="submit" value="Subscribe" id="subscribe"> 
                 </form>
-            </div>
-        </div>
+            </div> <!-- signin__box signin__box--abs close -->
+        </div> <!-- container close -->
     </section>
 
-
-
-    <!-- register -->
+    <!-- ### SECTION RGGISTER FORM ### -->
     <section class="section signin-section register--none" id="register">
         <div class="container">
             <div class="signin__box signin__box--abs">
@@ -283,31 +279,34 @@
                     <div class="form-line">
                         <div class="form__input">
                             <label for="reg-fname">First name</label>
-                            <input class="--border" type="text" id="reg-fname" name="reg-fname" placeholder="Firs Name">
+                            <input class="--border" type="text" id="reg-fname" name="regFname" placeholder="Firs Name">
                         </div>
                         <div class="form__input">
                             <label for="reg-lname">Last name</label>
-                            <input class="--border" type="text" id="reg-lname" name="reg-lname" placeholder="Last Name">
+                            <input class="--border" type="text" id="reg-lname" name="regLname" placeholder="Last Name">
                         </div>
                     </div>
                     <div class="form__input">
                         <label for="reg-username">Username</label>
-                        <input class="--border" type="text" id="reg-username" name="reg-username" placeholder="@username">
+                        <input class="--border" type="text" id="reg-username" name="regUsername" placeholder="@username">
                     </div>
                     <div class="form__input">
                         <label for="reg-email">Email</label>
-                        <input class="--border" type="email" id="reg-email" name="reg-email" placeholder="example@email.com">
+                        <input class="--border" type="email" id="reg-email" name="regEmail" placeholder="example@email.com">
                     </div>
-                    <div class="signin-line">
-                        <div class="auto-sign">
-                            <input type="checkbox" id="auto-sign__input" name="auto-reg" checked>
-                            <label for="auto-reg">Keep me signed in</label>
+                    <div class="form-line">
+                        <div class="form__input">
+                            <label for="reg-password">Password</label>
+                            <input class="--border" type="password" id="reg-password" name="regPassword" placeholder="Password">
                         </div>
-                        <div class="auto-sign">
-                            <input type="checkbox" id="auto-sign__input" name="auto-reg" checked>
-                            <a href="#" id="password-forgot">I agree with the policy</a>
+                        <div class="form__input">
+                            <label for="reg-password-check">Password Check</label>
+                            <input class="--border" type="password" id="reg-password-check" name="regPasswordCheck" placeholder="Password">
                         </div>
-                        
+                    </div>
+                    <div class="auto-agree">
+                        <input type="checkbox" class="auto-sign__input" name="autoAgree">
+                        <a href="#" id="agree-statements">I agree all statements in teams of service</a>
                     </div>
         
                     <span class="or-line">or</span>
@@ -325,13 +324,9 @@
                     <input type="submit" value="Register" id="register-input">
                     
                 </form>
-            </div>
-        </div>
+            </div> <!-- signin__box signin__box--abs -->
+        </div> <!-- container close -->
     </section>
-
-
-
-
 
     <footer id="social-media" class="footer">
         <ul class="social-list">
@@ -350,8 +345,11 @@
         </ul>
     </footer>
 
-
     <script src="js/main.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="js/validation.js"></script>
 </body>
 
 </html>
