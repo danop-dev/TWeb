@@ -71,9 +71,7 @@ $(document).ready(function () {
             },
             autoAgree:{
                 required: true
-            }
-
-            
+            } 
         },
         messages: {
             regFname: "*Please enter your first name",
@@ -100,7 +98,5 @@ $(document).ready(function () {
             form.submit();
         }
     });
-
-
 });
 

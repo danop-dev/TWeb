@@ -18,7 +18,7 @@
             <div class="container">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="main.html" class="nav__link">Home</a>
+                        <a href="index.php" class="nav__link">Home</a>
                     </li>
                     <li class="nav__item">
                         <a href="#discover" class="nav__link">Descopera lumea</a>
@@ -206,7 +206,7 @@
                     </div>
                 </div>
 
-                <form action="#" id="contact-form" name="ContactForm">
+                <form action="php/contact.php" method="POST" id="contact-form" name="ContactForm">
                     <div class="form-line">
                         <div class="form__input">
                             <label for="fname">First name</label>
@@ -223,10 +223,9 @@
                     </div>
                     <div class="form__input">
                         <label for="message">Message</label>
-                        <!-- <input type="text" id="message" name="message" placeholder="Type your message here"> -->
                         <textarea name="message" id="message" placeholder="Type your message here"></textarea>
                     </div>
-                    <input type="submit" value="Send Message" id="submit">
+                    <input type="submit" name="submit" value="Send Message" id="submit">
 
                 </form>
             </div> <!-- contact__box close -->
@@ -238,7 +237,7 @@
         <div class="container">
             <div class="signin__box signin__box--abs">
                 <button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button>
-                <form action="#" id="signin-form">
+                <form action="php/signin.php" method="POST" id="signin-form">
                     <h3 class="sign-title">Login Account</h3>
                     <input class="input-data" type="email" id="sign-email" name="email" placeholder="example@email.com">
                     <input class="input-data" type="password" id="sign-password" name="password" placeholder="Password">
@@ -262,7 +261,7 @@
                             <a href="#" class="social-link teleg--color form--social-link" target="_blank"><i class="fab fa-telegram"></i></a>
                         </li>
                     </ul>
-                    <input type="submit" value="Subscribe" id="subscribe"> 
+                    <input type="submit" name="submit-log" value="Login" id="subscribe"> 
                 </form>
             </div> <!-- signin__box signin__box--abs close -->
         </div> <!-- container close -->
@@ -273,7 +272,7 @@
         <div class="container">
             <div class="signin__box signin__box--abs">
                 <button class="close-btn" id="close-btn--reg"><i class="fas fa-times"></i></button>
-                <form action="#" id="register-form">
+                <form action="php/register.php" method="POST" id="register-form">
                     <h3 class="sign-title">Register Account</h3>
 
                     <div class="form-line">
