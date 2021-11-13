@@ -8,6 +8,9 @@
         margin: 30px auto 0;
         width: 90%;
     }
+    .signin__box{
+        width: 50%;
+    }
 }
 
 @media (max-width: 760px){
@@ -33,6 +36,29 @@
     }
     .scroll-top{
         right: 20px;
+    }
+    .contact__box {
+        width: 90%;
+    }
+    #submit{
+        font-size: 0.65rem;
+    }
+    .signin-line{
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    #password-forgot{
+        margin-top: 5px;
+    }
+    .or-line{
+        font-size: 16px;
+    }
+    .form__social-list{
+        justify-content: space-around;
+        width: 100%;
+    }
+    .signin__box{
+        width: 80%;
     }
 }
 
@@ -94,5 +120,27 @@
     .carousel__item{
         height: 200px;
     }
+    .form-line{
+        flex-wrap: wrap;
+    }
+    .form-line .form__input{
+        width: 100%;
+    }
+    #submit{
+        width: 100%;
+        font-size: 1rem;
+    }
+    .contact__box{
+        margin: 20px auto;
+        padding: 35px 25px;
+        width: 100%;
+    }
+    .signin__box{
+        width: 90%;
+        padding: 50px 25px;
+    }
+   
+    
+    
 
 }

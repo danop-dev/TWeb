@@ -1,8 +1,19 @@
 <?php
 
 if(isset($_POST['submit'])){
-    $email = $_POST['email'];
+    $email = ($_POST["email"]);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "*Invalid email format";
+    }
+    
     $password = $_POST['password'];
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $number    = preg_match('@[0-9]@', $password);
+
+    if (!$uppercase || !$lowercase || !$number || strlen($password) < 6) {
+        $passwordErr = "*Invalid password format";
+    }
 }
 ?>
 
@@ -24,8 +35,29 @@ if(isset($_POST['submit'])){
                 <i class="fas fa-check"></i>
                 <p>Succes</p>
             </div>
-            <p class="send_mess"> <?php echo "Email: ".$_POST['email'] ?> </p>
-            <p class="send_mess"> <?php echo "Password: ".$_POST['password'] ?> </p>
+            <p class="send_mess"> 
+                <?php 
+                    $email = ($_POST["email"]);
+                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                        $email = "*Invalid email format";
+                    }
+                    echo "Email: ".$email 
+                ?> 
+            </p>
+            <p class="send_mess"> 
+                <?php 
+                    $password = $_POST['password'];
+                
+                    $uppercase = preg_match('@[A-Z]@', $password);
+                    $lowercase = preg_match('@[a-z]@', $password);
+                    $number    = preg_match('@[0-9]@', $password);
+
+                    if (!$uppercase || !$lowercase || !$number || strlen($password) < 6) {
+                        $password = "*Invalid password format";
+                    }
+                    echo "Password: ".$password
+                ?> 
+            </p>
         </div>
     </header>
 </body>
