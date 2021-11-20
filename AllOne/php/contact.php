@@ -1,4 +1,5 @@
 <?php
+include 'validation.php';
 	// $to = "crayzeedan@gmail.com";
 	//$subject = "titlu";
 	// $message = "Mesajul in php\n\n";
@@ -12,12 +13,12 @@
 
         
     }
-    if (!preg_match ("/^[a-zA-z]*$/", $fname) ||  !preg_match ("/^[a-zA-z]*$/", $lname) || strlen($fname < 1) || strlen($lname < 1)) {
+    if (validName($fname) && validName($lname)) {
         $nameErr = true;
     } else {
         $nameErr = false;
     }
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (validEmail($email)) {
         $emailErr = true;
     } else {
         $emailErr = false;
@@ -60,27 +61,24 @@
                     $email = $_POST['email'];
                     $message = $_POST['message'];
 
-                    if (!preg_match ("/^[a-zA-z]*$/", $fname) ||  !preg_match ("/^[a-zA-z]*$/", $lname) || strlen($fname > 1) || strlen($lname > 1)) {
+                    if(validName($fname) && validName($lname)){
+                        $nameErr = false;                       
+                    } else{
                         $nameErr = true;
-                    } else {
-                        $nameErr = false;
                     }
-                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                        $emailErr = true;
-                    } else {
+
+                    if(validEmail($email)){
                         $emailErr = false;
-                    }
+                    } else{
+                        $emailErr = true;
+                    }         
                 
                     if (strlen($message > 2)) {
                         $messageErr = true;
                     } else {
                         $messageErr = false;
                     }
-                
-                    if($nameErr = false){
-                        $name = $fname." ".$lname;
-                    }
-                    $subject = $name;
+                    $subject = "Subject";
                 
                     if(!($nameErr && $emailErr && $messageErr)){
                         mail($email, $subject, $message);

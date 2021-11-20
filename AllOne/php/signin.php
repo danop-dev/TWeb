@@ -1,18 +1,20 @@
 <?php
+include 'validation.php';
+
 
 if(isset($_POST['submit'])){
     $email = ($_POST["email"]);
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = "*Invalid email format";
+    if(validEmail($email)){
+        echo $email;
+    } else {
+        echo "*Invalid email format";
     }
     
     $password = $_POST['password'];
-    $uppercase = preg_match('@[A-Z]@', $password);
-    $lowercase = preg_match('@[a-z]@', $password);
-    $number    = preg_match('@[0-9]@', $password);
-
-    if (!$uppercase || !$lowercase || !$number || strlen($password) < 6) {
-        $passwordErr = "*Invalid password format";
+    if(validPassword($password)){
+        echo $password;
+    } else {
+        echo "*Invalid password format";
     }
 }
 ?>
@@ -37,27 +39,25 @@ if(isset($_POST['submit'])){
             </div>
             <p class="send_mess"> 
                 <?php 
-                    $email = ($_POST["email"]);
-                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                        $email = "*Invalid email format";
+                    $email = ($_POST["email"]);                   
+                    if(validEmail($email)){
+                        echo $email;
+                    } else {
+                        echo "*Invalid email format";
                     }
-                    echo "Email: ".$email 
+                    
                 ?> 
             </p>
             <p class="send_mess"> 
                 <?php 
                     $password = $_POST['password'];
-                
-                    $uppercase = preg_match('@[A-Z]@', $password);
-                    $lowercase = preg_match('@[a-z]@', $password);
-                    $number    = preg_match('@[0-9]@', $password);
-
-                    if (!$uppercase || !$lowercase || !$number || strlen($password) < 6) {
-                        $password = "*Invalid password format";
+                    if(validPassword($password)){
+                        echo $password;
+                    } else {
+                        echo "*Invalid password format";
                     }
-                    echo "Password: ".$password
                 ?> 
-            </p>
+            </p>           
         </div>
     </header>
 </body>

@@ -1,34 +1,39 @@
 <?php
+include 'validation.php';
 
 if(isset($_POST['register-input'])){
     $fname = $_POST['regFname'];
     $lname = $_POST['regLname'];
-    if (!preg_match ("/^[a-zA-z]*$/", $fname) ||  !preg_match ("/^[a-zA-z]*$/", $lname) || strlen($fname <= 1) || strlen($lname <= 1)) {
-        $nameErr = "*Invalid name format";
+
+    if(validName($fname) && validName($lname)){
+        echo "*Invalid name format";
+    } else {
+        $name = $fname." ".$lname;
+        echo $name;
     }
 
     $user = $_POST['regUsername'];
-    if (!preg_match ("/^[a-zA-z0-9]*$/", $user) || strlen($user) <= 6) {
-        $userErr = "*Invalid user format";
+    if(validUser($user)){
+        echo "*Invalid user format";  
+    } else {
+        echo $user;
     }
 
     $email = $_POST['regEmail'];
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = "*Invalid email format";
+    if(validEmail($email)){
+        echo "*Invalid email format";
+    } else {
+        echo $email;
     }
 
-    
     $password = $_POST['regPassword'];
     $passwordCheck = $_POST['regPasswordCheck'];
 
-    $uppercase = preg_match('@[A-Z]@', $password);
-    $lowercase = preg_match('@[a-z]@', $password);
-    $number    = preg_match('@[0-9]@', $password);
-
-    if (!$uppercase || !$lowercase || !$number || strlen($password) < 6 || $password != $passwordCheck) {
-        $passwordErr = "*Invalid password format";
+    if(validPassword($password) && $password != $passwordCheck){
+        echo "*Invalid password format";  
+    } else {
+        echo $password;
     }
-    
 }
 ?>
 
@@ -54,38 +59,42 @@ if(isset($_POST['register-input'])){
             <p class="send_mess"> 
                 <?php 
                     $fname = $_POST['regFname'];
-                    $lname = $_POST['regLname'];
-                    if (!preg_match ("/^[a-zA-z]*$/", $fname) || strlen($fname < 2)) {
-                        $fname = "*Invalid First Name format";
+                    if(validName($fname)){
+                        echo "First Name: ". $fname;
+                    } else {
+                        echo "*Invalid fname format";
                     }
-                    echo "First Name: ".$fname;
-                ?> 
+                ?>
             </p>
             <p class="send_mess"> 
                 <?php
                     $lname = $_POST['regLname'];
-                    if (!preg_match ("/^[a-zA-z]*$/", $lname) || strlen($lname < 2)) {
-                        $lname = "*Invalid Last Name format";
+                    if(validName($fname)){
+                        echo "First Name: ". $lname;
+                    } else {
+                        echo "*Invalid lname format";
                     }
-                    echo "Last Name: ".$lname;
                 ?> 
             </p>
             <p class="send_mess"> 
                 <?php 
                     $user = $_POST['regUsername'];
-                    if (!preg_match ("/^[a-zA-z0-9]*$/", $user) || strlen($user <= 6)) {
-                        $user = "*Invalid user format";
+                    if(validUser($user)){
+                        echo "User: ". $user;
+                    } else {
+                        echo "*Invalid user format";
                     }
-                    echo "Username: ".$user;
+                    
                 ?> 
             </p>
             <p class="send_mess"> 
                 <?php 
                     $email = $_POST['regEmail'];
-                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                        $email = "Invalid email format";
+                    if(validEmail($email)){
+                        echo $email;
+                    } else {
+                        echo "*Invalid email format";
                     }
-                    echo "Email: ".$email; 
                 ?> 
             </p>
             <p class="send_mess"> 
@@ -93,14 +102,11 @@ if(isset($_POST['register-input'])){
                     $password = $_POST['regPassword'];
                     $passwordCheck = $_POST['regPasswordCheck'];
 
-                    $uppercase = preg_match('@[A-Z]@', $password);
-                    $lowercase = preg_match('@[a-z]@', $password);
-                    $number    = preg_match('@[0-9]@', $password);
-                
-                    if (!$uppercase || !$lowercase || !$number || strlen($password) < 6 || $password != $passwordCheck) {
-                        $password = "*Invalid password format";
+                    if(validPassword($password) && $password != $passwordCheck){
+                        echo "*Invalid password format";  
+                    } else {
+                        echo $password;
                     }
-                    echo "Password: ".$password;
                 ?> 
             </p>
             <p class="send_mess"> 
