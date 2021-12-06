@@ -1,125 +1,47 @@
 <?php
 include 'validation.php';
+include 'conectbd.php';
 
-if(isset($_POST['register-input'])){
-    $fname = $_POST['regFname'];
-    $lname = $_POST['regLname'];
+if(isset($_POST["reg_fname"], $_POST['reg_lname'], $_POST["reg_username"], $_POST["reg_email"], $_POST["reg_psw"], $_POST["reg_pswCheck"])){
 
-    if(validName($fname) && validName($lname)){
-        echo "*Invalid name format";
-    } else {
-        $name = $fname." ".$lname;
-        echo $name;
+    $fname = $_POST['reg_fname'];
+    $lname = $_POST['reg_lname'];
+    $user = $_POST['reg_username'];
+    $email = $_POST['reg_email'];
+    $password = $_POST['reg_psw'];
+    $passwordCheck = $_POST['reg_pswCheck'];
+
+
+    $error_input = true;
+    if(!(validName($fname) && validName($lname))){
+        $error_input = false;
     }
-
-    $user = $_POST['regUsername'];
-    if(validUser($user)){
-        echo "*Invalid user format";  
-    } else {
-        echo $user;
+    if(!validUser($user)){
+        $error_input = false; 
     }
-
-    $email = $_POST['regEmail'];
-    if(validEmail($email)){
-        echo "*Invalid email format";
-    } else {
-        echo $email;
+    if(!validEmail($email)){
+        $error_input = false;
     }
-
-    $password = $_POST['regPassword'];
-    $passwordCheck = $_POST['regPasswordCheck'];
-
     if(validPassword($password) && $password != $passwordCheck){
-        echo "*Invalid password format";  
-    } else {
-        echo $password;
+        $error_input = false;
+    }
+
+    if($error_input){
+        $conbd = connect();
+        $checkEmail = "SELECT email FROM users WHERE email='$email'";
+
+        $resultcheckEmail = $conbd -> query($checkEmail);
+        
+        if ($resultcheckEmail -> num_rows == 0){
+            $password = md5($password);
+            $insert_sql = "INSERT INTO users(fname, lname, username, email, password) VALUES('$fname', '$lname', '$user', '$email', '$password')";
+            mysqli_query($conbd, $insert_sql);
+            echo json_encode(array('statusCode' => 200));
+        } else {
+            echo json_encode(array('statusCode' => 201));
+        }  
+    } else{
+        echo json_encode(array('statusCode' => 201));
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success</title>
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="../css/succes.css">
-</head>
-<body>
-    <header class="header">
-        <div class="box">
-            <div class="box-header">
-                <i class="fas fa-check"></i>
-                <p>Succes Register</p>
-            </div>
-
-            <p class="send_mess"> 
-                <?php 
-                    $fname = $_POST['regFname'];
-                    if(validName($fname)){
-                        echo "First Name: ". $fname;
-                    } else {
-                        echo "*Invalid fname format";
-                    }
-                ?>
-            </p>
-            <p class="send_mess"> 
-                <?php
-                    $lname = $_POST['regLname'];
-                    if(validName($fname)){
-                        echo "First Name: ". $lname;
-                    } else {
-                        echo "*Invalid lname format";
-                    }
-                ?> 
-            </p>
-            <p class="send_mess"> 
-                <?php 
-                    $user = $_POST['regUsername'];
-                    if(validUser($user)){
-                        echo "User: ". $user;
-                    } else {
-                        echo "*Invalid user format";
-                    }
-                    
-                ?> 
-            </p>
-            <p class="send_mess"> 
-                <?php 
-                    $email = $_POST['regEmail'];
-                    if(validEmail($email)){
-                        echo $email;
-                    } else {
-                        echo "*Invalid email format";
-                    }
-                ?> 
-            </p>
-            <p class="send_mess"> 
-                <?php 
-                    $password = $_POST['regPassword'];
-                    $passwordCheck = $_POST['regPasswordCheck'];
-
-                    if(validPassword($password) && $password != $passwordCheck){
-                        echo "*Invalid password format";  
-                    } else {
-                        echo $password;
-                    }
-                ?> 
-            </p>
-            <p class="send_mess"> 
-                <?php 
-                    $checkbox = $_POST['autoAgree'];
-                
-                    if (!$checkbox) {
-                        $checkbox = "*Invalid password format";
-                    }
-                    echo "Checkbox: ".$checkbox;
-                ?> 
-            </p>
-        </div>
-    </header>
-</body>
-</html>

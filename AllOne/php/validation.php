@@ -2,8 +2,15 @@
 
 function validEmail($email) {
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (empty($email)) {
         return false;
+    } else {
+        $email = trim($email);
+        $email = stripslashes($email);
+        $email = htmlspecialchars($email);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return false;
+        }
     }
     return true;
 }

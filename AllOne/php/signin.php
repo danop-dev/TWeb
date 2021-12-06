@@ -1,64 +1,41 @@
 <?php
 include 'validation.php';
+include 'conectbd.php';
 
+if(isset($_POST["input_email"], $_POST['input_psw'])){
+    $email = $_POST["input_email"]; 
+    $password = $_POST['input_psw'];
 
-if(isset($_POST['submit'])){
-    $email = ($_POST["email"]);
-    if(validEmail($email)){
-        echo $email;
-    } else {
-        echo "*Invalid email format";
+    $error_input = true;
+
+    if(!validEmail($email)){
+        $error_input = false;
     }
-    
-    $password = $_POST['password'];
-    if(validPassword($password)){
-        echo $password;
+    if(!validPassword($password)){
+        $error_input = false;
+    }
+
+    if($error_input){
+        $conbd = connect();
+        $checkEmail = "SELECT email FROM users WHERE email='$email'";    
+        
+        $resultcheckEmail = $conbd -> query($checkEmail);
+        
+        if ($resultcheckEmail -> num_rows == 1){
+            $checkPsw = "SELECT password FROM users WHERE email='$email'";
+            $password = md5($password);
+
+            if ($checkPsw == $password){
+                echo json_encode(array('statusCode' => 200));
+            } else{
+                echo json_encode(array('statusCode' => 201));
+            }
+
+        } else {
+            echo json_encode(array('statusCode' => 201));
+        }
     } else {
-        echo "*Invalid password format";
+        echo json_encode(array('statusCode' => 201));
     }
 }
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success</title>
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="../css/succes.css">
-</head>
-<body>
-    <header class="header">
-        <div class="box">
-            <div class="box-header">
-                <i class="fas fa-check"></i>
-                <p>Succes</p>
-            </div>
-            <p class="send_mess"> 
-                <?php 
-                    $email = ($_POST["email"]);                   
-                    if(validEmail($email)){
-                        echo $email;
-                    } else {
-                        echo "*Invalid email format";
-                    }
-                    
-                ?> 
-            </p>
-            <p class="send_mess"> 
-                <?php 
-                    $password = $_POST['password'];
-                    if(validPassword($password)){
-                        echo $password;
-                    } else {
-                        echo "*Invalid password format";
-                    }
-                ?> 
-            </p>           
-        </div>
-    </header>
-</body>
-</html>
+?>    
