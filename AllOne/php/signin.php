@@ -25,7 +25,7 @@ if(isset($_POST["input_email"], $_POST['input_psw'])){
             $checkPsw = "SELECT password FROM users WHERE email='$email'";
             $password = md5($password);
 
-            if ($checkPsw == $password){
+            if (strcmp($checkPsw, $password)){
                 echo json_encode(array('statusCode' => 200));
             } else{
                 echo json_encode(array('statusCode' => 201));

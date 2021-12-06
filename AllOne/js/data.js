@@ -45,8 +45,6 @@ $("#register-input").click(function(e){
         },
         dataType: "json",
         success: function(response){
-            console.log("Succes!!");
-
             if(response.statusCode == 200){
                 alert("Succes register");
             } else if(response.statusCode == 201){
